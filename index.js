@@ -1,12 +1,17 @@
 let answer = document.querySelector(".answer");
-let button = document.querySelector(".submit");
+let submit = document.querySelector(".submit");
+let reset = document.querySelector(".reset");
 
-button.onclick = function() {
+submit.onclick = function() {
   let random = (Math.floor(Math.random() * 10)) + 1;
   if (answer.value == random) {
-    alert("CORRECT! It is " + random);
+    document.body.style.backgroundColor = "green";
   }
   else if(answer.value != random) {
-    alert("WRONG! The answer is " + random);
+    document.body.style.backgroundColor = "red";
   }
+}
+
+reset.onclick = function() {
+  document.body.style.backgroundColor = "black";
 }
